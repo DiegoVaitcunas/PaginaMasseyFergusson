@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilosContacto.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Contact Form</title>
+</head>
+<body>
+  <a href="./pagAnto.html"><div class="arrow"></div></a>
+<section id="contact">
+  <h1 class="section-header">Contacto</h1>
+  
+  <div class="contact-wrapper">
+    <!-- Left contact page -->
+    <form id="contact-form" class="form-horizontal" role="form" method="post" action="https://formsubmit.co/Antonioloustaunau88@gmail.com">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="name" placeholder="Nombre y Apellido" name="name" value="" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="tel" class="form-control" id="telefono" placeholder="Telefono" name="Telefono" value="" required>
+        </div>
+      </div>
+
+      <textarea class="form-control" rows="10" placeholder="Asunto" name="message" required></textarea>
+      
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <div class="alt-send-button">
+          <i class="fa fa-paper-plane"></i><span class="send-text">Enviar</span>
+        </div>
+      </button>
+      <input type="hidden" name="_next" value="http://localhost:8000/pagAnto.html">
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+    <!-- reedirige  -->
+   
+
+    <div class="direct-contact-container">
+      <ul class="contact-list">
+        <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place"><a href="https://www.google.com.uy/maps/dir//Loustaunau+Maquinaria,+km.+41,500,+Ruta+8+Vieja,+Departamento+de+Canelones/@-34.7487257,-56.0351435,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95a021e56d1d0753:0x2be8934b65ace1d5!2m2!1d-55.8567439!2d-34.6940127?hl=es-419&entry=ttu" title="Give me a call">Ruta 8 km 41.500, Piedra del Toro, Uruguay</a></span></i></li>
+        <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="https://web.whatsapp.com/" title="Give me a call"> 095-729674 / 22956023 </a></span></i></li>
+        <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">alvpiedradeltoro@gmail.com</a></span></i></li>
+      </ul>
+
+      <hr>
+      
+      <ul class="social-media-list">
+        <li><a href="https://www.facebook.com/loustaunaumaquinarias?mibextid=ZbWKwL" target="_blank" class="contact-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="#" target="_blank" class="contact-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://instagram.com/masseyferguson_loustaunau?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank" class="contact-icon"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      </ul>
+        
+      
+      <hr>
+      <div class="copyright">&copy; ALL RIGHTS RESERVED</div>
+    </div>
+  </div>
+</section>
+<style>
+    
+.arrow{
+  position: absolute;
+  top: 20px; /* Ajusta la posición vertical de la flecha */
+  right: 20px; /* Ajusta la posición horizontal de la flecha */
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.arrow:hover{
+  border: solid 2px white;
+  border-radius: 50%;
+}
+.arrow:after{
+  position:absolute;
+  display:block;
+  content:"";
+  color:white;
+  width: 20px;
+  height: 15px;
+/*   border:solid 1px;  */
+  top:-1px;
+  border-bottom:solid 2px;
+  transform:translatex(4px);
+}
+
+.arrow:before {
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px;
+  border-left: solid 2px;
+  transform-origin: 0% 0%;
+  transform: rotateZ(-45deg);
+}
+.arrow:hover:before {
+  animation: aniArrow01 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
+}
+
+.arrow:hover:after {
+  animation: aniArrow02 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
+}
+
+    /* Puedes agregar más estilos para cambiar otros elementos rojos aquí */
+</style>
+</body>
+</html>

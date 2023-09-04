@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pruebaMenuCatalogo.css">
+</head>
+<body>
+    <a href="./pagAnto.html"><div class="arrow"></div></a>
+    <div class="logo-container">
+      <img src="./img/logosAUsarParaCatalogo/massey-ferguson-logo-458BFEE378-seeklogo.com.png" alt="Logo" class="logo-img">
+  </div>
+    <div class="back"></div>
+<nav>
+  <a href="tractoresCatalogo.html">Tractores</a>
+  <a href="rotativasCatalogo.html">Rotativas</a>
+  <a href="enfardadorasCatalogo.html">Enfardadoras</a>
+  <a href="fertilizadorasCatalogo.html">Fertilizadoras</a>
+  <a href="segadorasCatalogo.html">Segadoras</a>
+  <a href="plumasCatalogo.html">Plumas</a>
+  <a href="traillasCatalogo.html">Traillas</a>
+  <a href="excentricasCatalogo.html">Excentricas</a>
+  <a href="afinadorasCatalogo.html">Afinadoras</a>
+</nav>
+<style>
+    /* Cambia el color de fondo de .arrow en rojo */
+    .arrow {
+        background-color: rgb(255, 255, 255) !important;
+    }
+
+    /* Cambia el color de borde de .arrow en rojo */
+    .arrow:hover {
+        border: solid 2px black !important;
+    }
+    .arrow:after{
+  color: black !important;
+}
+    /* Cambia el color de los elementos con color rojo */
+    [color="#C7111E"] {
+        color: black !important;
+    }
+    .badge {
+    background: #000000 !important;
+    box-shadow: 0 0 0 1px #000000 !important;
+    
+}   
+@keyframes borderAni{
+   0% {
+    border:solid 2px #000000 !important;
+  }
+  100% {    
+    border:solid 2px #000000 !important;
+    border-radius:50%;
+  }
+}
+/*////////////////////////////////////LOGO DE LA PAGINA//////////////////////////////////////////////////*/
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  padding: 5px; /* Agrega un espacio alrededor del logo */
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+}
+
+.logo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.016); /* Fondo suave en tonalidad gris */
+  z-index: -1; /* Coloca el fondo detrás del logo */
+}
+
+    /* Puedes agregar más estilos para cambiar otros elementos rojos aquí */
+</style>
+</body>
+</html>

@@ -1,0 +1,52 @@
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser'); // Importamos body-parser para analizar datos JSON
+const axios = require('axios'); // Importamos Axios para hacer solicitudes HTTP
+
+app.use(bodyParser.json()); // Middleware para analizar JSON
+
+app.post('/enviarcorreo', (req, res) => {
+    // Recibir los datos del formulario del frontend
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message;
+
+    // Configurar los datos del correo
+    const apiKey = "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";
+    const url = "https://api.sendinblue.com/v3/smtp/email";
+
+    const headers = {
+        "Content-Type": "application/json",
+        "api-key": apiKey
+    };
+
+    const body = {
+        sender: {
+            name: name,
+            email: email
+        },
+        to: [
+            {
+                email: "destinatario@example.com", // Cambiar al correo del destinatario
+                name: "Destinatario" // Cambiar al nombre del destinatario
+            }
+        ],
+        subject: "Asunto del correo", // Cambiar al asunto deseado
+        htmlContent: `<p>${message}</p>` // Usar el contenido del mensaje proporcionado
+    };
+
+    // Enviar la solicitud POST utilizando Axios
+    axios.post(url, body, { headers })
+        .then(response => {
+            console.log("Respuesta:", response.data);
+            res.json({ mensaje: 'Correo enviado con éxito' });
+        })
+        .catch(error => {
+            console.error("Error en la solicitud:", error);
+            res.status(500).json({ error: 'Error al enviar el correo' });
+        });
+});
+
+app.listen(3000, () => {
+    console.log('Servidor en ejecución en el puerto 3000');
+});

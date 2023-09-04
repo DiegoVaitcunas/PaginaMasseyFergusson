@@ -1,0 +1,48 @@
+document.getElementById("contact-form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const url = "https://api.sendinblue.com/v3/smtp/email?=";
+    const apiKey = "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";
+
+    const headers = {
+        "Content-Type": "application/json",
+        "api-key": apiKey
+    };
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const body = {
+        sender: {
+            name: "Diego Vaitcunas",
+            email: "diegoeltity@gmail.com"
+        },
+        to: [
+            {
+                email: "diegoeltity@gmail.com",
+                name: "Diego"
+            }
+        ],
+        subject: "promacion1",
+        htmlContent: `<p>Hola mundo</p><p>Nombre: ${name}</p><p>Email: ${email}</p><p>Mensaje: ${message}</p>`
+    };
+
+    const response = await fetch(url, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(body)
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        console.log("Respuesta:", data);
+
+        // Resetear los campos del formulario
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+    } else {
+        console.error("Error en la solicitud:", response.status);
+    }
+});
